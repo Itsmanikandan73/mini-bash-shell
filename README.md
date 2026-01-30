@@ -26,9 +26,9 @@ gcc bash_shell.c -o bash_shell -Wall
 ## Example Usage
 ```bash
 ./bash_shell
-ls             //list directories and files
-cd             //chage directory
-pwd            //print the working directory
+$ls             //list directories and files
+$cd             //chage directory
+$pwd            //print the working directory
 $whoami       //show the current user
 $date         //show the current date
 ```
