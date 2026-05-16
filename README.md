@@ -1,34 +1,105 @@
-# mini-bash-shell
+# simple Bash Shell
 
-A simple functioning **Bernie shell** written in pure C from scratch.
-It's a minimal command-line interpreter that can run basic commands, change directories, read files, and more - my first attempt to understand how real shells work using system calls.
+A simple, functional **Bourne Again SHell (Bash)** clone written in pure C from scratch.
+
+This project is a minimal command-line interpreter that demonstrates how shells work under the hood using system calls like `fork()`, `execvp()`, and `chdir()`.
+
+---
 
 ## Features
 
-- Interactive prompt
-- Built-in: 'cd' (using 'chdir')
-- Run external commands (via 'fork' + 'execvp')
-- Basic command tokenizing with 'strtok'
+- Interactive command prompt
+- Built-in `cd` command (changes directory)
+- Execution of external commands and programs
+- Basic command parsing using tokenization
+- Supports common commands like `ls`, `pwd`, `whoami`, `date`, `cat`, etc.
 
-Not implemented yet: pipes, redirection, environment variables, quotes, signals, etc..
-``` markdown
+### Not yet implemented
+- Pipes (`|`)
+- I/O Redirection (`>`, `<`, `>>`)
+- Environment variables
+- Quoting and escaping
+- Job control / signals
+- History and tab completion
+
+---
+
 ## Build & Run
 
-1. Clone the repository
 ```bash
-https://github.com/Itsmanikandan73/mini-bash-shell.git
-cd mini-bash-shell
+# Clone the repository
+git clone https://github.com/Itsmanikandan73/Bash-shell.git
+cd Bash-shell
 
-#Compile & run
-gcc bash_shell.c -o bash_shell -Wall -Wextra
-./bash_shell
-```
-## Example Usage
+# Compile
+gcc src/shell.c -o shell -Wall -Wextra
+
+# Run
+./shell
+
+A simple, functional **Bourne Again SHell (Bash)** clone written in pure C from scratch.
+
+This project is a minimal command-line interpreter that demonstrates how shells work under the hood using system calls like `fork()`, `execvp()`, and `chdir()`.
+
+---
+
+## Features
+
+- Interactive command prompt
+- Built-in `cd` command (changes directory)
+- Execution of external commands and programs
+- Basic command parsing using tokenization
+- Supports common commands like `ls`, `pwd`, `whoami`, `date`, `cat`, etc.
+
+### Not yet implemented
+- Pipes (`|`)
+- I/O Redirection (`>`, `<`, `>>`)
+- Environment variables
+- Quoting and escaping
+- Job control / signals
+- History and tab completion
+
+---
+
+## Build & Run
+
 ```bash
-./bash_shell
-ls            //list directories and files
-cd            //chage directory
-pwd           //print the working directory
-whoami        //show the current user
-date          //show the current date
+# Clone the repository
+git clone https://github.com/Itsmanikandan73/Bash-shell.git
+cd Bash-shell
+
+# Compile
+gcc src/bash_shell.c -o bash_shell -Wall -Wextra
+
+# Run
+./shell
 ```
+# Example Usage
+```
+$ ./shell
+
+bash-shell> ls
+src  README.md  shell.c
+
+bash-shell> pwd
+/home/user/Bash-shell
+
+bash-shell> cd src
+
+bash-shell> whoami
+itsmanikandan73
+
+bash-shell> date
+Sat May 16 07:45:12 UTC 2026
+
+bash-shell> exit
+```
+# Project Structure
+```
+Bash-shell/
+├── src/
+│   └── shell.c     # Main source code
+├── shell           # Compiled binary (after build)
+└── README.md
+```
+
